@@ -1,0 +1,13 @@
+public void openGallery(View view){
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        galleryIntent.setType("image/*");
+        if(galleryIntent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(galleryIntent, GET_FROM_GALLERY);
+        }
+    }
+
+
+//Also teeno activties mein top pr GET_FROM_GALEERY ko ek value
+// de rkhi hogi for ex public static int GET_FROM_GALLERY=1;
+// hr ek activity mein usko alg value de. Awareness mein 1, 
+// positive mein 5 and vigilance mein 6.
